@@ -1,0 +1,34 @@
+[0.014s] Invoking command in '/home/qinsu/ros2_ws4/src/my_robot_description/build/my_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/qinsu/ros2_ws2/install/my_robot_controller:/home/qinsu/ros2_ws/install/my_robot_controller:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/qinsu/ros2_ws4/src/my_robot_description -DCMAKE_INSTALL_PREFIX=/home/qinsu/ros2_ws4/src/my_robot_description/install/my_robot_description
+[0.159s] -- The C compiler identification is GNU 11.4.0
+[0.264s] -- The CXX compiler identification is GNU 11.4.0
+[0.273s] -- Detecting C compiler ABI info
+[0.363s] -- Detecting C compiler ABI info - done
+[0.367s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.368s] -- Detecting C compile features
+[0.369s] -- Detecting C compile features - done
+[0.372s] -- Detecting CXX compiler ABI info
+[0.462s] -- Detecting CXX compiler ABI info - done
+[0.467s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.467s] -- Detecting CXX compile features
+[0.467s] -- Detecting CXX compile features - done
+[0.477s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.817s] -- Found Python3: /home/qinsu/anaconda3/bin/python3 (found version "3.11.5") found components: Interpreter 
+[0.938s] Traceback (most recent call last):
+[0.938s]   File "/opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 22, in <module>
+[0.938s]     from catkin_pkg.package import parse_package_string
+[0.938s] ModuleNotFoundError: No module named 'catkin_pkg'
+[0.942s] [31mCMake Error at /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:95 (message):
+[0.942s]   execute_process(/home/qinsu/anaconda3/bin/python3
+[0.942s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py
+[0.942s]   /home/qinsu/ros2_ws4/src/my_robot_description/package.xml
+[0.942s]   /home/qinsu/ros2_ws4/src/my_robot_description/build/my_robot_description/ament_cmake_core/package.cmake)
+[0.942s]   returned error code 1
+[0.942s] Call Stack (most recent call first):
+[0.942s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:49 (_ament_package_xml)
+[0.942s]   /opt/ros/humble/share/ament_cmake_core/cmake/core/ament_package.cmake:63 (ament_package_xml)
+[0.942s]   CMakeLists.txt:16 (ament_package)
+[0.942s] 
+[0.942s] [0m
+[0.943s] -- Configuring incomplete, errors occurred!
+[0.943s] See also "/home/qinsu/ros2_ws4/src/my_robot_description/build/my_robot_description/CMakeFiles/CMakeOutput.log".
+[0.948s] Invoked command in '/home/qinsu/ros2_ws4/src/my_robot_description/build/my_robot_description' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/qinsu/ros2_ws2/install/my_robot_controller:/home/qinsu/ros2_ws/install/my_robot_controller:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/qinsu/ros2_ws4/src/my_robot_description -DCMAKE_INSTALL_PREFIX=/home/qinsu/ros2_ws4/src/my_robot_description/install/my_robot_description
