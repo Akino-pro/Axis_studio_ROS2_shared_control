@@ -8,7 +8,7 @@ class ViewerNode(Node):
         super().__init__('viewer_node')
         self.create_subscription(
             JointState,
-            '/joint_states',
+            '/fake_joint_states',
             self.joint_state_cb,
             10
         )
@@ -25,4 +25,3 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-
