@@ -73,11 +73,11 @@ class SocketNode(Node):
         super().__init__('socket_node')
         self.initialize_shared_memory()
         # Initialize ROS Publisher
-        self.state_publisher_ = self.create_publisher(JointState, 'joint_states', 10)
+        self.state_publisher_ = self.create_publisher(JointState, 'fake_joint_states', 10)
         self.trajectory_publisher = self.create_publisher(JointTrajectory, '/joint_trajectory_controller/joint_trajectory', 10)
 
         # Initialize Socket Server
-        self.ip = "192.168.30.134"
+        self.ip = "192.168.116.129"
         self.port = 12345
         self.server_thread = threading.Thread(target=self.start_receiver)
         self.server_thread.start()
