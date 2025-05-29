@@ -11,7 +11,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
     ],
-    install_requires=['setuptools'],
+    install_requires=['setuptools','ruckig'],
     zip_safe=True,
     maintainer='yuchen',
     maintainer_email='yuchen@todo.todo',
