@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'viewer_node = my_robot_viewer.viewer_node:main',
+            'viewer_node_simulation = my_robot_viewer.viewer_node_simulation:main',
         ],
     },
 )
