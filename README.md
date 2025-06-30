@@ -1,4 +1,4 @@
-# Axis_studio_ROS2_bridge
+# Axis_studio_ROS2_shared_control
 
 Requirement: Ubuntu 22.04, Ros humble version, Unity 
 
