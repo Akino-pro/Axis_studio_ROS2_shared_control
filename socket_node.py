@@ -87,6 +87,7 @@ class SocketNode(Node):
         self.method2_info = [0.0] * 10
         self.ik_results = [0.0] * 7 
         self.ik_results_1 = [0.0] * 7 
+        
         self.DH_table = np.array([
             [-np.pi/2, 0, 0.2848, 0],
             [np.pi/2, 0, -0.0118, 0],
@@ -107,6 +108,28 @@ class SocketNode(Node):
             [0, 0, 0.1673, 0],
             [0, 0, 0.088, 0]
         ])
+        """
+        self.DH_table = np.array([
+            [0, 0, 0.333, 0],
+            [-np.pi/2, 0, 0, 0],
+            [np.pi/2, 0, 0.316, 0],
+            [np.pi/2, 0.0825, 0, 0],
+            [-np.pi/2, -0.0825, 0.384, 0],
+            [np.pi/2, 0, 0, 0],
+            [np.pi/2, 0.088, 0, 0],
+            [0, 0, 0.107, 0]
+        ])
+        self.DH_table_1 = np.array([
+            [0, 0, 0.333, 0],
+            [-np.pi/2, 0, 0, 0],
+            [np.pi/2, 0, 0.316, 0],
+            [np.pi/2, 0.0825, 0, 0],
+            [-np.pi/2, -0.0825, 0.384, 0],
+            [np.pi/2, 0, 0, 0],
+            [np.pi/2, 0.088, 0, 0],
+            [0, 0, 0.107, 0]
+        ])
+        """
         self._pos_log_path = os.path.expanduser('~/ewp_positions.txt')
         self._pos_log_fh   = open(self._pos_log_path, 'a', buffering=1)	
         self._last_saved_pos = None  
@@ -272,6 +295,7 @@ class SocketNode(Node):
         
         # joint_state.name = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'joint_7', 'end_effector']  # Update with the correct joint names
         # joint_state.position = [float(f"{x:.6f}") for x in ik_results_to_use[0:7]] + [0.0]*9  # Use selected ik_results
+        
         joint_state.name = [
             'joint_1', 'joint_2', 'joint_3', 'joint_4', 
             'joint_5', 'joint_6', 'joint_7', 
@@ -283,11 +307,17 @@ class SocketNode(Node):
             'robotiq_85_right_finger_tip_joint',
             'joint1', 'joint2', 'joint3', 'joint4', 'joint5', 'joint6', 'joint7'
         ]
+        
+        #joint_state.name = ['fr3_joint1', 'fr3_joint2', 'fr3_joint3','fr3_joint4', 'fr3_joint5', 'fr3_joint6', 'fr3_joint7']
+        #joint_state.position = [float(f'{x:.6f}') for x in ik_results_to_use[:7]]
+        
         joint_state.position = (
             [float(f"{x:.6f}") for x in ik_results_to_use[0:7]] +  # Arm joints
             [0.0] * 6 +
             [float(f"{x:.6f}") for x in self.ik_results[0:7]] # Gripper joints
         )
+        
+        
 
         # joint_state.name = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'joint_7','joint1', 'joint2', 'joint3', 'joint4', 'joint5', 'joint6', 'joint7']
         # # joint_state.name = ['joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'joint_7', 'end_effector','joint1', 'joint2', 'joint3', 'joint4', 'joint5', 'joint6', 'joint7']
