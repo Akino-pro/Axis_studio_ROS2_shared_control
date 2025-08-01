@@ -14,7 +14,6 @@ import struct
 import os
 import json, paho.mqtt.client as mqtt
 
-"""
 # ─── MQTT PUBLISHER SETUP ──────────────────────────────────────────────────────
 BROKER = "acbbe4c6e23f429bb880f91e1bea473c.s1.eu.hivemq.cloud"          # ⇐ change me
 PORT   = 8883                  # ⇐ 8883 = MQTT over TLS
@@ -35,7 +34,6 @@ def _init_mqtt():
 
 mqtt_cli = _init_mqtt()
 # ─── END OF MQTT PUBLISHER SETUP ──────────────────────────────────────────────────────
-"""
 
 method_choice = 1  # Default to method 1
 
@@ -110,7 +108,7 @@ class SocketNode(Node):
         self.ik_results = [0.0] * 7 
         self.ik_results_1 = [0.0] * 7 
         
-        
+        """
         self.DH_table = np.array([
             [-np.pi/2, 0, 0.2848, 0],
             [np.pi/2, 0, -0.0118, 0],
@@ -152,7 +150,6 @@ class SocketNode(Node):
             [np.pi/2, 0.088, 0, 0],
             [0, 0, 0.107, 0]
         ])
-        """
         
         self._pos_log_path = os.path.expanduser('~/ewp_positions.txt')
         self._pos_log_fh   = open(self._pos_log_path, 'a', buffering=1)	
@@ -368,7 +365,7 @@ class SocketNode(Node):
         # self.get_logger().info(f"Good fake  Results: {[random.uniform(-5, 5) for _ in range(7)]}")
         self.state_publisher_.publish(joint_state)
         
-        """
+        
         # MQTT
         payload = {
 		"t_ns": self.get_clock().now().nanoseconds,          # precise timestamp
@@ -379,7 +376,6 @@ class SocketNode(Node):
                  json.dumps(payload, separators=(",", ":")),
                  qos=1,
                  retain=True)
-        """
 
     # def publish_joint_trajectory(self, positions, time_from_start_sec):
     #     joint_trajectory = JointTrajectory()
